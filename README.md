@@ -4,26 +4,56 @@ Guia para configurar o projeto localmente.
 
 ### Configuração do Banco de Dados
 
-> Certifique-se de ter um banco de dados MySQL instalado localmente. 
+Banco de dados:
 
-> Você pode baixar e instalar o MySQL a partir do site oficial.
+Possíveis melhorias:
 
-> Após a instalação, abra seu terminal ou prompt de comando e execute os seguintes comandos SQL para criar as tabelas necessárias:
+- Trocar o id para smallint(5) / tinyint(3)
 
-### Tabela de Produtos
 
-CREATE TABLE produtos (
-    produtos_id INT AUTO_INCREMENT PRIMARY KEY,
-    produtos_id_departamento INT,
-    produtos_nome VARCHAR(255)
+#### CREATE CATEGORY
+
+CREATE TABLE TB_Categories (
+    category_id Smallin PRIMARY KEY,
+    category_name VARCHAR(255) NOT NULL
 );
 
-### Tabela de Departamentos
 
-CREATE TABLE departamentos (
-    departamentos_id INT AUTO_INCREMENT PRIMARY KEY,
-    departamentos_nome VARCHAR(255)
-);
+#### CREATE MANUFACTURER
+
+CREATE TABLE `revus`.`TB_Manufacturers` (
+  `id` INT UNSIGNED NOT NULL,
+  `id_category` INT UNSIGNED NOT NULL,
+  `manufacturer` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_category_manufacturer_idx` (`id_category` ASC) VISIBLE,
+  CONSTRAINT `fk_category_manufacturer`
+    FOREIGN KEY (`id_category`)
+    REFERENCES `revus`.`TB_Categories` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+
+#### CREATE VEHICLES MODEL
+
+
+CREATE TABLE `revus`.`TB_Vehicles_Model` (
+  `id` INT UNSIGNED NOT NULL,
+  `id_manufacturer` INT UNSIGNED NOT NULL,
+  `vehicle_model` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_category_manufacturer_idx` (`id_manufacturer` ASC) VISIBLE,
+  CONSTRAINT `fk_manufacturer_vehicle_model`
+    FOREIGN KEY (`id_manufacturer`)
+    REFERENCES `revus`.`TB_Manufacturers` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+
+
+Inserir categoria manual> não vou inserir no crud ( obs do gilliano colocar apenas crud onde for necessário )
+
+INSERT INTO TB_Categories (category_name) VALUES ('car'), ('motorcycle');
 
 ### Configurações do arquivo .env
 
