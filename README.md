@@ -22,7 +22,7 @@ CREATE TABLE TB_Categories (
 #### CREATE MANUFACTURER
 
 CREATE TABLE `revus`.`TB_Manufacturers` (
-  `id` INT UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_category` INT UNSIGNED NOT NULL,
   `manufacturer` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
@@ -39,7 +39,7 @@ CREATE TABLE `revus`.`TB_Manufacturers` (
 
 
 CREATE TABLE `revus`.`TB_Vehicles_Model` (
-  `id` INT UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `id_manufacturer` INT UNSIGNED NOT NULL,
   `vehicle_model` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
