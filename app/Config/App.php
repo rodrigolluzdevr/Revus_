@@ -42,6 +42,9 @@ class App extends BaseConfig
      */
     public string $indexPage = 'index.php';
 
+    public $CSRFProtection = true;
+
+
     /**
      * --------------------------------------------------------------------------
      * URI PROTOCOL
