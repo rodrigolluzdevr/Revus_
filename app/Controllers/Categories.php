@@ -13,7 +13,7 @@ class Categories extends Controller
         $CategoriesModel = new CategoriesModel();
 
         // load categories
-        $categories = $CategoriesModel->return_categories();
+        $categories = $CategoriesModel->find();
 
         //load data
         $data['categories'] = $categories;

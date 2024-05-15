@@ -30,7 +30,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/revus/public/vehicles_model">BUSCAR AUTOMÓVEL</a>
+                        <a class="nav-link" href="http://localhost/revus/public/vehicles_model">BUSCAR</a>
                     </li>
                 </ul>
             </div>
@@ -41,11 +41,21 @@
         <h5>CATEGORIAS</h5>
         <div class="d-flex justify-content-start">
             <?php foreach ($categories as $category) : ?>
-                <p class="p-4"><?php echo $category['category_name']; ?></p>
+                <p class="p-4">
+                    <a href="<?= base_url('categories/view/' . $category['id']) ?>">
+                        <?= $category['category_name'] ?>
+                    </a>
+
+                    <a href="<?= base_url('categories/editar/' . $category['id']) ?>">
+                        Editar
+                    </a>
+
+                    <a href="<?= base_url('categories/delete/' . $category['id']) ?>">
+                        Excluir
+                    </a>
+                </p>
             <?php endforeach; ?>
         </div>
-    </div>
-
     </div>
 
     <!-- Bootstrap JS e jQuery -->

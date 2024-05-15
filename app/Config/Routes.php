@@ -5,19 +5,10 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
+#$routes->get('/', 'Home::index');
+$routes->get('/', 'Login::index');
+$routes->setAutoRoute(true);
 
- //Busca
-$routes->get('/busca', 'Busca::index');
-$routes->post('busca/buscaProdutosPorDepartamento', 'Busca::buscaProdutosPorDepartamento');
+ 
 
- //Categories
- $routes->get('/categories', 'Categories::index');
-
- //Manufacturers
- $routes->get('/manufacturers', 'Manufacturers::index');
-
- //VehiclesModel
- $routes->get('/vehicles_model', 'VehiclesModel::index');
-
-
-
+ 

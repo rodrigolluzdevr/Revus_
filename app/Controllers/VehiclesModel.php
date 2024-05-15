@@ -16,7 +16,7 @@ class VehiclesModel extends Controller
         $vehiclesmodel = $VehiclesModelModel->return_vehicles_model();
 
         //load data
-        $data['vehiclesmodel'] = $vehiclesmodel;
+        $data['vehicles_model'] = $vehiclesmodel;
 
         //load view -- data > retorna o array para a view
         return view('vehicles_model', $data);

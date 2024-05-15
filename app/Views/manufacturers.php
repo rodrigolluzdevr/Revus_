@@ -30,7 +30,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="http://localhost/revus/public/vehicles_model">BUSCAR AUTOMÓVEL</a>
+                        <a class="nav-link" href="http://localhost/revus/public/vehicles_model">BUSCAR</a>
                     </li>
                 </ul>
             </div>
