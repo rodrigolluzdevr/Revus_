@@ -6,10 +6,6 @@ Guia para configurar o projeto localmente.
 
 Banco de dados:
 
-Possíveis melhorias:
-
-- Trocar o id para smallint(5) / tinyint(3)
-
 
 #### CREATE CATEGORY
 
@@ -50,8 +46,6 @@ CREATE TABLE `revus`.`TB_Vehicles_Model` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-
-Inserir categoria manual> não vou inserir no crud ( obs do gilliano colocar apenas crud onde for necessário )
 
 INSERT INTO TB_Categories (category_name) VALUES ('car'), ('motorcycle');
 
